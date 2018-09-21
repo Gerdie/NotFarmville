@@ -14,7 +14,14 @@ public class Controller : MonoBehaviour {
 		farmTiles = new FarmTile[xPositions.Length * yPositions.Length];
 
 		for ( int i=0; i < xPositions.Length; i++ ) {
-			FarmTile currentTile = Instantiate(baseTile) as FarmTile;
+
+			FarmTile currentTile;
+			if (i == 0) {
+				currentTile = baseTile;
+			} else {
+				currentTile = Instantiate(baseTile) as FarmTile;
+			}
+
 			int randomImgIndex = Random.Range (0, images.Length);
 			currentTile.LayTile (i, xPositions[i], yPositions[i], images[randomImgIndex]);
 			farmTiles [i] = currentTile;
