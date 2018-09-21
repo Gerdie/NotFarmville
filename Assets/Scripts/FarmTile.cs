@@ -6,6 +6,7 @@ public class FarmTile : MonoBehaviour {
 	public Sprite plowedImg;
 	private int _id;
 	private bool plowed;
+	public Crop crop;
 
 	public int id {
 		get { return _id; }
@@ -23,8 +24,16 @@ public class FarmTile : MonoBehaviour {
 		plowed = true;
 	}
 
+	public void Plant() {
+		crop.Create(this.transform.position.x, this.transform.position.y);
+	}
+
 	public void OnMouseDown() {
-		Plow ();
+		if ( plowed ) {
+			Plant ();
+		} else {
+			Plow ();
+		}
 	}
 
 }
