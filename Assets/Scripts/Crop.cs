@@ -10,7 +10,7 @@ public class Crop : MonoBehaviour {
 	public void Create (float xPos, float yPos) {
 		age = 0;
 		GetComponent<SpriteRenderer> ().sprite = growthStages[age];
-		this.transform.position = new Vector3 (xPos, yPos + .13f, -0.2f);
+		this.transform.position = new Vector3 (xPos, yPos + .4f, -0.2f);
 	}
 
 	public void Grow () {

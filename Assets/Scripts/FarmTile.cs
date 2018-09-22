@@ -6,6 +6,8 @@ public class FarmTile : MonoBehaviour {
 	public Sprite plowedImg;
 	private int _id;
 	private bool plowed;
+	private bool planted;
+	private float timeGrowing;
 	public Crop crop;
 
 	public int id {
@@ -26,6 +28,23 @@ public class FarmTile : MonoBehaviour {
 
 	public void Plant() {
 		crop.Create(this.transform.position.x, this.transform.position.y);
+		planted = true;
+		timeGrowing = 0;
+	}
+
+	void GrowPlant(float deltaTime) {
+		timeGrowing += deltaTime;
+		// Grow Crop every 10 seconds
+		if (timeGrowing > 10) {
+			crop.Grow ();
+			timeGrowing = 0;
+		}
+	}
+
+	void FixedUpdate() {
+		if (planted) {
+			GrowPlant(Time.deltaTime);
+		}
 	}
 
 	public void OnMouseDown() {
