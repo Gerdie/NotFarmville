@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FarmTile : MonoBehaviour {
+	[SerializeField] Equip equip;
 	public Sprite plowedImg;
 	private int _id;
 	private bool plowed;
@@ -35,7 +36,7 @@ public class FarmTile : MonoBehaviour {
 	void GrowPlant(float deltaTime) {
 		timeGrowing += deltaTime;
 		// Grow Crop every 10 seconds
-		if (timeGrowing > 10) {
+		if (timeGrowing > 5) {
 			crop.Grow ();
 			timeGrowing = 0;
 		}
@@ -48,9 +49,9 @@ public class FarmTile : MonoBehaviour {
 	}
 
 	public void OnMouseDown() {
-		if ( plowed ) {
+		if ( plowed && equip.equippedTool == "seed" ) {
 			Plant ();
-		} else {
+		} else if ( !plowed && equip.equippedTool == "hoe" ) {
 			Plow ();
 		}
 	}
