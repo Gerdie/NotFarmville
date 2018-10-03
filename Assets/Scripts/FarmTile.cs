@@ -36,7 +36,7 @@ public class FarmTile : MonoBehaviour {
 	void GrowPlant(float deltaTime) {
 		timeGrowing += deltaTime;
 		// Grow Crop every 10 seconds
-		if (timeGrowing > 5) {
+		if (timeGrowing > 3) {
 			crop.Grow ();
 			timeGrowing = 0;
 		}

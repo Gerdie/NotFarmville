@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crop : MonoBehaviour {
-	[SerializeField] Sprite[] growthStages;
-	[SerializeField] float[] xOffsets;
-	[SerializeField] float[] yOffsets;
+abstract public class Crop : MonoBehaviour {
+	//fields
 	public int age;
 	private float initialXPos;
 	private float initialYPos;
+	public Sprite[] growthStages;
+	//properties
+	public abstract List<float> xOffsets { get; }
+	public abstract List<float> yOffsets { get; }
 
 	// Set initial state
 	public void Create (float xPos, float yPos) {
