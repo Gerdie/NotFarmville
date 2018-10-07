@@ -7,6 +7,7 @@ public class Equip : MonoBehaviour {
 
 	public void Tool(string tool) {
 		equippedTool = tool;
+		Debug.Log ("equipped: " + tool);
 	}
 
 }

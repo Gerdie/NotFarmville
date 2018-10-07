@@ -33,7 +33,8 @@ abstract public class Crop : MonoBehaviour {
 		this.transform.position = new Vector3 (initialXPos + xOffsets[idx], initialYPos + yOffsets[idx], -0.2f);
 	}
 
-	public void OnMouseClick() {
-		Destroy (this);
+	public void Harvest() {
+		GetComponent<SpriteRenderer> ().sprite = null;
+		age = 0;
 	}
 }
