@@ -7,8 +7,8 @@ abstract public class Crop : MonoBehaviour {
 	public int age;
 	private float initialXPos;
 	private float initialYPos;
-	public Sprite[] growthStages;
 	//properties
+	public abstract Sprite[] growthStages { get; }
 	public abstract List<float> xOffsets { get; }
 	public abstract List<float> yOffsets { get; }
 
