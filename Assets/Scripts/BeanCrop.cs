@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BeanCrop : Crop {
-	[SerializeField] Sprite[] _growthStages;
+	private Sprite[] _growthStages;
 
 	public override Sprite[] growthStages {
 		get {
@@ -19,5 +19,11 @@ public class BeanCrop : Crop {
 		get {
 			return new List<float>(){0.6f, 0.84f, 0.84f, 0.84f};
 		}
+	}
+
+	void Start () {
+		// TODO: replace with AssetBundle.LoadFromFile
+		// https://docs.unity3d.com/ScriptReference/AssetBundle.LoadFromFile
+		_growthStages = Resources.LoadAll<Sprite>("Bean");
 	}
 }
