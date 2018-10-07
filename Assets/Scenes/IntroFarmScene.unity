@@ -340,7 +340,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: seed
+          m_StringArgument: carrot seed
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -440,6 +440,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &881525842
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1322318333}
+    m_Modifications:
+    - target: {fileID: 114857847860703152, guid: 23eecf24b9cf4499295d7f4dfdc21812,
+        type: 2}
+      propertyPath: _growthStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894219075102324, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+      propertyPath: m_Name
+      value: CarrotCrop
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114857847860703152, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 23eecf24b9cf4499295d7f4dfdc21812, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &881525843 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4162210140016350, guid: 23eecf24b9cf4499295d7f4dfdc21812,
+    type: 2}
+  m_PrefabInternal: {fileID: 881525842}
+--- !u!1 &881525844 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1894219075102324, guid: 23eecf24b9cf4499295d7f4dfdc21812,
+    type: 2}
+  m_PrefabInternal: {fileID: 881525842}
+--- !u!114 &881525845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881525844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be78e95cf92b74e228c9384a19a1388f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  age: 0
 --- !u!1 &1026965473
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +849,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equip: {fileID: 1249675667}
   plowedImg: {fileID: 21300000, guid: 4b0bf61c834d34cbda9bd8e23a652209, type: 3}
-  crop: {fileID: 1548767926}
+  beanCrop: {fileID: 1548767926}
+  carrotCrop: {fileID: 881525845}
 --- !u!212 &1322318331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -841,6 +916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1548767925}
+  - {fileID: 881525843}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1135,7 +1211,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: seed
+          m_StringArgument: bean seed
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

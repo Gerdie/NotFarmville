@@ -9,14 +9,17 @@ public class FarmTile : MonoBehaviour {
 	private bool plowed;
 	private bool planted;
 	private float timeGrowing;
-	public Crop crop;
+	private Crop crop;
+	public BeanCrop beanCrop;
+	public CarrotCrop carrotCrop;
 
 	public int id {
 		get { return _id; }
 	}
 
 	// Used for initialization
-	public void LayTile (int _id, float xPos, float yPos, Sprite image) {
+	public void LayTile (int id, float xPos, float yPos, Sprite image) {
+		this._id = id;
 		GetComponent<SpriteRenderer> ().sprite = image;
 		this.transform.position = new Vector3 (xPos, yPos, -0.1f);
 		plowed = false;
@@ -27,7 +30,16 @@ public class FarmTile : MonoBehaviour {
 		plowed = true;
 	}
 
-	public void Plant() {
+	public void Plant(string cropName) {
+		if (cropName == "carrot") {
+//			carrotCrop.Create(this.transform.position.x, this.transform.position.y);
+			crop = carrotCrop;
+		} else if (cropName == "bean") {
+//			beanCrop.Create(this.transform.position.x, this.transform.position.y);
+			crop = beanCrop;
+		} else {
+			Debug.LogError("Tried to Plant unknown crop: " + cropName);
+		}
 		crop.Create(this.transform.position.x, this.transform.position.y);
 		planted = true;
 		timeGrowing = 0;
@@ -49,8 +61,10 @@ public class FarmTile : MonoBehaviour {
 	}
 
 	public void OnMouseDown() {
-		if ( plowed && equip.equippedTool == "seed" ) {
-			Plant ();
+		if (plowed && equip.equippedTool == "bean seed") {
+			Plant ("bean");
+		} else if ( plowed && equip.equippedTool == "carrot seed" ) {
+			Plant ("carrot");
 		} else if ( !plowed && equip.equippedTool == "hoe" ) {
 			Plow ();
 		}
