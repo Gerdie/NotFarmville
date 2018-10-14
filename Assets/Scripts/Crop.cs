@@ -8,6 +8,7 @@ abstract public class Crop : MonoBehaviour {
 	private float initialXPos;
 	private float initialYPos;
 	//properties
+	public abstract string cropName { get; }
 	public abstract Sprite[] growthStages { get; }
 	public abstract List<float> xOffsets { get; }
 	public abstract List<float> yOffsets { get; }
@@ -33,8 +34,17 @@ abstract public class Crop : MonoBehaviour {
 		this.transform.position = new Vector3 (initialXPos + xOffsets[idx], initialYPos + yOffsets[idx], -0.2f);
 	}
 
-	public void Harvest() {
+	public string Harvest() {
+		bool harvestable = false;
+		if (age >= growthStages.Length - 1) {
+			harvestable = true;
+		}
 		GetComponent<SpriteRenderer> ().sprite = null;
 		age = 0;
+		if (harvestable) {
+			return cropName;
+		} else {
+			return "null";
+		}
 	}
 }

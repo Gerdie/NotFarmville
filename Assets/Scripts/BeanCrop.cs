@@ -5,6 +5,12 @@ using UnityEngine;
 public class BeanCrop : Crop {
 	private Sprite[] _growthStages;
 
+	public override string cropName {
+		get {
+			return "bean";
+		}
+	}
+
 	public override Sprite[] growthStages {
 		get {
 			return _growthStages;

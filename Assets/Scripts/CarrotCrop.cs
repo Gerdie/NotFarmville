@@ -5,6 +5,12 @@ using UnityEngine;
 public class CarrotCrop : Crop {
 	private Sprite[] _growthStages;
 
+	public override string cropName {
+		get {
+			return "carrot";
+		}
+	}
+
 	public override Sprite[] growthStages {
 		get {
 			return _growthStages;

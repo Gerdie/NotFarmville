@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FarmTile : MonoBehaviour {
 	[SerializeField] Equip equip;
+	[SerializeField] Inventory inventory;
 	public Sprite plowedImg;
+	public Sprite unplowedImg;
 	private int _id;
 	private bool plowed;
 	private bool planted;
@@ -59,6 +61,16 @@ public class FarmTile : MonoBehaviour {
 		}
 	}
 
+	void HarvestPlant() {
+		string harvestedCropName = crop.Harvest ();
+		if (harvestedCropName != "null") {
+			inventory.IncrementItem (harvestedCropName);
+		}
+		GetComponent<SpriteRenderer> ().sprite = unplowedImg;
+		planted = false;
+		plowed = false;
+	}
+
 	void FixedUpdate() {
 		if (planted) {
 			GrowPlant(Time.deltaTime);
@@ -68,6 +80,8 @@ public class FarmTile : MonoBehaviour {
 	public void OnMouseDown() {
 		if ( equip.equippedTool == "hoe" ) {
 			Plow ();
+		} else if ( equip.equippedTool == "pail" ) {
+			HarvestPlant ();
 		} else if ( plowed && !planted ) {
 			if (equip.equippedTool == "bean seed") {
 				Plant ("bean");
