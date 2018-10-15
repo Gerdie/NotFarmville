@@ -17,6 +17,12 @@ public class CarrotCrop : Crop {
 		}
 	}
 
+	public override List<int> yieldPerGrowthStage { 
+		get {
+			return new List<int> (){0,0,1,3};
+		} 
+	}
+
 	public override List<float> xOffsets {
 		get {
 			return new List<float>(){0f,0f,0f,0f};

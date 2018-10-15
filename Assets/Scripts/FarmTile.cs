@@ -62,10 +62,9 @@ public class FarmTile : MonoBehaviour {
 	}
 
 	void HarvestPlant() {
-		string harvestedCropName = crop.Harvest ();
-		if (harvestedCropName != "null") {
-			inventory.IncrementItem (harvestedCropName);
-		}
+		string harvestedCropName = crop.cropName;
+		int harvestableAmt = crop.Harvest ();
+		inventory.IncrementItem (harvestedCropName, harvestableAmt);
 		GetComponent<SpriteRenderer> ().sprite = unplowedImg;
 		planted = false;
 		plowed = false;

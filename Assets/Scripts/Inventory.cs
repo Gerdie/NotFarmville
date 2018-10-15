@@ -17,9 +17,9 @@ public class Inventory : MonoBehaviour {
 		items [itemName] = 0;
 	}
 
-	public void IncrementItem(string itemName) {
+	public void IncrementItem(string itemName, int itemAmt) {
 		int curAmt = items [itemName];
-		items [itemName] = curAmt + 1;
+		items [itemName] = curAmt + itemAmt;
 		Debug.Log (items [itemName] + " " + itemName + " in inventory");
 	}
 
