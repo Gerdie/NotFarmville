@@ -10,7 +10,9 @@ public class Inventory : MonoBehaviour {
 		items = new Dictionary<string, int>();
 		// TODO: automate this according to mapping?
 		RegisterItem ("carrot");
+		RegisterItem ("carrot seed");
 		RegisterItem ("bean");
+		RegisterItem ("bean seed");
 	}
 
 	public void RegisterItem (string itemName) {
@@ -26,5 +28,6 @@ public class Inventory : MonoBehaviour {
 	public void DecrementItem(string itemName) {
 		int curAmt = items [itemName];
 		items [itemName] = curAmt - 1;
+		Debug.Log (items [itemName] + " " + itemName + " in inventory");
 	}
 }

@@ -29,17 +29,17 @@ public class FarmTile : MonoBehaviour {
 
 	public void Plow() {
 		if ( planted ) {
-			Debug.Log ("trying to destroy crop");
 			crop.Harvest();
 			planted = false;
 			timeGrowing = 0;
-			Debug.Log ("supposedly destroyed crop?");
 		}
 		GetComponent<SpriteRenderer> ().sprite = plowedImg;
 		plowed = true;
 	}
 
 	public void Plant(string cropName) {
+		inventory.DecrementItem (equip.equippedTool);
+
 		if (cropName == "carrot") {
 			crop = carrotCrop;
 		} else if (cropName == "bean") {
