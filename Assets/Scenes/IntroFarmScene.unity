@@ -343,6 +343,17 @@ MonoBehaviour:
           m_StringArgument: carrot seed
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1249675669}
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &675807004
@@ -771,6 +782,7 @@ GameObject:
   - component: {fileID: 1249675666}
   - component: {fileID: 1249675667}
   - component: {fileID: 1249675668}
+  - component: {fileID: 1249675669}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -832,6 +844,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a1119bf164043849ec983ab0bbb248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1249675669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249675664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cad3a0e1996844e5b179de700844c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1249675668}
+  seedName: carrot seed
+  seedButton: {fileID: 675807003}
 --- !u!1 &1322318329
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,10 @@ public class Inventory : MonoBehaviour {
 		// TODO: automate this according to mapping?
 		RegisterItem ("carrot");
 		RegisterItem ("carrot seed");
+		SetItemQty ("carrot seed", 5);
 		RegisterItem ("bean");
 		RegisterItem ("bean seed");
+		SetItemQty ("bean seed", 3);
 	}
 
 	public void RegisterItem (string itemName) {
@@ -29,5 +31,13 @@ public class Inventory : MonoBehaviour {
 		int curAmt = items [itemName];
 		items [itemName] = curAmt - 1;
 		Debug.Log (items [itemName] + " " + itemName + " in inventory");
+	}
+
+	public int GetItemQty(string itemName) {
+		return items [itemName];
+	}
+
+	public void SetItemQty(string itemName, int qty) {
+		items [itemName] = qty;
 	}
 }

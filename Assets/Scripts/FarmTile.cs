@@ -38,7 +38,6 @@ public class FarmTile : MonoBehaviour {
 	}
 
 	public void Plant(string cropName) {
-		inventory.DecrementItem (equip.equippedTool);
 
 		if (cropName == "carrot") {
 			crop = carrotCrop;
