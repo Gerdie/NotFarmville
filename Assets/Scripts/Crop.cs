@@ -24,11 +24,11 @@ abstract public class Crop : MonoBehaviour {
 	}
 
 	public void Grow () {
-		if (age == growthStages.Length) {
+		if (age == growthStages.Length - 1) {
 			return;
 		}
 		age += 1;
-		if (age < growthStages.Length) {
+		if (age <= growthStages.Length - 1) {
 			GetComponent<SpriteRenderer> ().sprite = growthStages[age];
 			SetPosition(age);
 		}
