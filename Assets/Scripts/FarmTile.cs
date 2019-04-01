@@ -38,7 +38,7 @@ public class FarmTile : MonoBehaviour {
 	}
 
 	public void Plant(string cropName) {
-
+		// TODO: Use() Seed here
 		if (cropName == "carrot") {
 			crop = carrotCrop;
 		} else if (cropName == "bean") {
